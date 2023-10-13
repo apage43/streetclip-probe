@@ -1,0 +1,24 @@
+quick example of probing [StreetCLIP](https://huggingface.co/geolocal/StreetCLIP) with a similar strategy as used in the paper
+
+```bash
+$ pixi run python scfind.py https://www.theviennablog.com/wp-content/uploads/2017/09/salzburg_amazing.jpg         
+`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["bos_token_id"]` will be overriden.
+`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["eos_token_id"]` will be overriden.
+Guessing country...
+[(0.9932761192321777, 'A street view photo in the country of Austria'), (0.002174080116674304, 'A street view photo in the country of Switzerland'), (0.0010547891724854708, 'A street view photo in the country of Czechia'), (0.0008951333584263921, 'A street view photo in the country of Slovenia'), (0.0008931329357437789, 'A street view photo in the country of Germany')]
+checking cities in Austria...
+[(0.6310611367225647, 'A street view photo near Salzburg in the country of Austria'), (0.12290839850902557, 'A street view photo near Innsbruck in the country of Austria'), (0.08351559191942215, 'A street view photo near Klosterneuburg in the country of Austria'), (0.047864023596048355, 'A street view photo near Sankt Pölten in the country of Austria'), (0.046841297298669815, 'A street view photo near Linz in the country of Austria'), (0.028763186186552048, 'A street view photo near Leonding in the country of Austria'), (0.01210741512477398, 'A street view photo near Klagenfurt in the country of Austria'), (0.008341413922607899, 'A street view photo near Wels in the country of Austria'), (0.00651167007163167, 'A street view photo near Graz in the country of Austria'), (0.005584757775068283, 'A street view photo near Vienna in the country of Austria'), (0.0025142293889075518, 'A street view photo near Steyr in the country of Austria'), (0.0021405492443591356, 'A street view photo near Villach in the country of Austria'), (0.0009254044271074235, 'A street view photo near Dornbirn in the country of Austria'), (0.0006754370988346636, 'A street view photo near Bregenz in the country of Austria'), (0.0002455442736390978, 'A street view photo near Wiener Neustadt in the country of Austria')]
+
+A street view photo near Salzburg in the country of Austria
+
+~/proj/sc-find via 🐍 v3.11.5 took 14s 
+$ pixi run python scfind.py https://crtb.cloudly.space/app/uploads/crt-bretagne/2018/11/1-nantes-ross-helen-1920x960-crop-1542298929.jpg
+`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["id2label"]` will be overriden.
+`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["bos_token_id"]` will be overriden.
+`text_config_dict` is provided which will be used to initialize `CLIPTextConfig`. The value `text_config["eos_token_id"]` will be overriden.
+Guessing country...
+[(0.676347017288208, 'A street view photo in the country of France'), (0.11493244022130966, 'A street view photo in the country of Belgium'), (0.04083171486854553, 'A street view photo in the country of Luxembourg'), (0.028991766273975372, 'A street view photo in the country of Monaco'), (0.013744066469371319, 'A street view photo in the country of Switzerland')]
+checking cities in France...
+[(0.3706859350204468, 'A street view photo near Nantes in the country of France'), (0.12482292950153351, 'A street view photo near Lille in the country of France'), (0.10482034832239151, 'A street view photo near Le Havre in the country of France'), (0.1026751697063446, 'A street view photo near Bordeaux in the country of France'), (0.07252997159957886, 'A street view photo near Paris in the country of France'), (0.06330099701881409, 'A street view photo near Strasbourg in the country of France'), (0.049754366278648376, 'A street view photo near Lyon in the country of France'), (0.03749022260308266, 'A street view photo near Rennes in the country of France'), (0.022745735943317413, 'A street view photo near Reims in the country of France'), (0.019018443301320076, 'A street view photo near Montpellier in the country of France'), (0.0162174291908741, 'A street view photo near Marseille in the country of France'), (0.007241078186780214, 'A street view photo near Toulouse in the country of France'), (0.00569437351077795, 'A street view photo near Saint-Étienne in the country of France'), (0.0015139093156903982, 'A street view photo near Toulon in the country of France'), (0.001489037531428039, 'A street view photo near Nice in the country of France')]
+```
